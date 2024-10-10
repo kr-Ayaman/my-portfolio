@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 60px 0;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        li {
+            padding: 0.8rem 1rem;
+        }
+
+        a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ffe600;
+        }
+
+        nav {
+            margin-top: 6rem;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 12rem;
+        }
+
+        .intro h1 {
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .intro p {
+            font-size: larger;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #about {
+            background-color: #fcf9f9;
+        }
+
+        section h1 {
+            margin: 3rem 0rem 0rem 0rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #007ACC;
+            position: relative;
+        }
+
+        section h1::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            background-color: yellow;
+            width: 100%;
+            height: 4px;
+        }
+
+        .aboutme {
+            display: flex;
+            padding: 3rem;
+            align-items: center;
+        }
+        .aboutme img{
+            height: 10rem;
+            transition: all 0.3s;
+        }
+        .aboutme img:hover{
+            transform: scale(1.15);
+        }
+        .aboutme p {
+            padding-right: 1rem;
+            padding-left: 4rem;
+            text-align: left;
+        }
+
+        .boxes {
+            display: flex;
+            justify-content: center;
+            padding: 3rem;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .singleBox {
+            background-color: #27A8FF;
+            padding: 2rem;
+            width: 12rem;
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 6px 10px rgb(224, 209, 209);
+            transition: transform 0.3s, background-color 0.4s;
+        }
+
+        .singleBox:hover {
+            transform: translateY(-10px);
+            background-color: #4eb5f9;
+        }
+
+        #projects {
+            background-color: #fcf9f9;
+        }
+
+        .project-card {
+            background-color: white;
+            margin: 3rem;
+            padding: 2rem;
+            border-radius: 2rem;
+            width: 35rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.4s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+
+        }
+
+        #contact {
+            display: flex;
+            margin-bottom: 7rem;
+
+        }
+
+        .svg-contain {
+            display: flex;
+            margin: 3rem;
+            gap: 4.5rem;
+        }
+
+        .logo-name {
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        svg {
+            transition: transform 0.3s;
+        }
+
+        svg:hover {
+            transform: scale(1.5);
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            /* height: 3rem; */
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #2575fc;
+            transition: background 0.3s ease;
+            margin-top: 0;
+            z-index: 1000;
+            opacity: 0.89;
+        }
+
+        .active {
+            color: #EAD61B;
+        }
+        @media screen and (max-width: 720px ) {
+            
+            .aboutme {
+                flex-direction: column;
+                text-align: center;
+            }
+            .aboutme p {
+                padding-left: 0;
+                padding-top: 1.5rem;
+            }
+            .svg-contain {
+                flex-direction: column;
+                gap: 3rem;
+            }
+            .project-card {
+                width: 76%;
+                margin-bottom: 3rem;
+            }
+            .svg-contain div {
+                margin-bottom: 1rem;
+            }
+
+            #contact {
+                align-items: center;
+                margin-bottom: 2rem;
+            }
+
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                padding: 30px 0;
+            }
+
+            .intro h1 {
+                font-size: 2.5rem;
+            }
+
+            .intro p {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            .intro h1 {
+                font-size: 1.8rem;
+            }
+
+            .intro p {
+                font-size: 1rem;
+            }
+
+            .singleBox {
+                width: 10rem;
+                padding: 1.5rem;
+            }
+
+            .boxes {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .project-card {
+                width: 64%;
+                margin-bottom: 3rem;
+            }
+
+            .aboutme img {
+                height: 8rem;
+            }
+
+            .aboutme p {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .contact-details {
+                font-size: 1rem;
+                padding: 0.5rem;
+            }
+            
+            .sticky ul{
+                flex-direction: row;
+                font-size: 0.8rem;
+            }
+            
+        }
+           </style>
+</head>
+
+<body>
+    <header id="home">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="intro">
+            <h1>Kumar Ayaman</h1>
+            <p>CSE Student | Aspiring software developer, passionate about technology</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <h1>About Me</h1>
+        <div class="aboutme">
+            <img src="WhatsApp Image 2024-10-10 at 19.10.37_7dcd1648.jpg" alt="">
+            <p>I'm a Computer Science Engineering student with a passion for web development, competitive programming, and machine learning. I enjoy tackling challenging problems and building projects that blend creativity with technical skills. My focus is on creating efficient code, intuitive designs, and exploring new technologies in AI and software development.</p>
+        </div>
+    </section>
+    <section id="skills">
+        <h1>Skills</h1>
+        <div class="boxes">
+            <div class="singleBox">
+                <h3>Languages</h3>
+                <p>Python, JavaScript,</p>
+                <p>C++</p>
+            </div>
+            <div class="singleBox">
+                <h3>Web Development</h3>
+                <p>HTML, CSS, Javascript,
+                </p>
+                <p>ReactJS</p>
+            </div>
+            <div class="singleBox">
+                <h3>Machine Learning</h3>
+                <p>Tensorflow, Pytorch</p>
+            </div>
+            <div class="singleBox">
+                <h3>Cloud/Database</h3>
+                <p>MySQL, MongoDB</p>
+            </div>
+            <div class="singleBox">
+                <h3>Tools</h3>
+                <p>Git, Gitlens</p>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <h1>Projects</h1>
+        <div class="projectcards">
+            <div class="project-card">
+                <h4>Hostel Management System</h4>
+                <p>Built a hostel management system with React for UI, MongoDB for database and NodeJS for backend.</p>
+            </div>
+            <div class="project-card">
+                <h4>Machine Learning Models</h4>
+                <p>Developed ML models using TensorFlow, scikit-learn, and PyTorch for various classification and
+                    prediction tasks.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h1>Contact Me</h1>
+        <div class="svg-contain">
+
+            <div class="address">
+
+                <svg width="50" height="50" viewBox="0 0 156 149" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="78" cy="74.5" rx="78" ry="74.5" fill="#AECDE4" />
+                    <path
+                        d="M77.5 121.583C76.4014 121.583 75.4597 121.269 74.675 120.641C73.8903 120.014 73.3017 119.19 72.9094 118.17C71.4184 113.775 69.5351 109.655 67.2594 105.81C65.0622 101.965 61.9625 97.453 57.9604 92.2738C53.9583 87.0946 50.7017 82.1509 48.1906 77.4425C45.758 72.7342 44.5417 67.045 44.5417 60.3748C44.5417 51.1936 47.7198 43.4248 54.076 37.0686C60.5108 30.6339 68.3188 27.4165 77.5 27.4165C86.6813 27.4165 94.45 30.6339 100.806 37.0686C107.241 43.4248 110.458 51.1936 110.458 60.3748C110.458 67.5158 109.085 73.4797 106.339 78.2665C103.67 82.9748 100.571 87.6439 97.0396 92.2738C92.8021 97.9238 89.5847 102.632 87.3875 106.399C85.2688 110.087 83.5031 114.011 82.0906 118.17C81.6983 119.268 81.0705 120.131 80.2073 120.759C79.4226 121.309 78.5201 121.583 77.5 121.583ZM77.5 104.751C78.834 102.083 80.325 99.454 81.9729 96.8644C83.6993 94.2748 86.2104 90.8221 89.5063 86.5061C92.8806 82.1116 95.6271 78.0703 97.7458 74.3821C99.9431 70.6155 101.042 65.9464 101.042 60.3748C101.042 53.8616 98.7267 48.3293 94.0969 43.778C89.5455 39.1481 84.0132 36.8332 77.5 36.8332C70.9868 36.8332 65.4153 39.1481 60.7854 43.778C56.234 48.3293 53.9583 53.8616 53.9583 60.3748C53.9583 65.9464 55.0177 70.6155 57.1365 74.3821C59.3337 78.0703 62.1195 82.1116 65.4938 86.5061C68.7896 90.8221 71.2615 94.2748 72.9094 96.8644C74.6358 99.454 76.166 102.083 77.5 104.751ZM77.5 72.1457C80.7958 72.1457 83.5816 71.0078 85.8573 68.7321C88.133 66.4564 89.2708 63.6707 89.2708 60.3748C89.2708 57.079 88.133 54.2932 85.8573 52.0175C83.5816 49.7418 80.7958 48.604 77.5 48.604C74.2042 48.604 71.4184 49.7418 69.1427 52.0175C66.867 54.2932 65.7292 57.079 65.7292 60.3748C65.7292 63.6707 66.867 66.4564 69.1427 68.7321C71.4184 71.0078 74.2042 72.1457 77.5 72.1457Z"
+                        fill="#FEF7FF" />
+                </svg>
+                <p class="logo-name">Address</p>
+                <p class=>CVR Hostel, IIT Indore,</p>
+                <p>Simrol, Indore,</p>
+                <p>MP-452020</p>
+            </div>
+            <div class="phone">
+
+                <svg width="50" height="50" viewBox="0 0 156 149" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="78" cy="74.5" rx="78" ry="74.5" fill="#AECDE4" />
+                    <path
+                        d="M124.583 97.6648V111.79C124.589 113.101 124.32 114.399 123.795 115.6C123.269 116.802 122.499 117.88 121.533 118.767C120.566 119.653 119.426 120.328 118.183 120.748C116.941 121.168 115.625 121.324 114.319 121.206C99.8308 119.632 85.9138 114.681 73.6862 106.752C62.3101 99.523 52.6651 89.878 45.4362 78.5019C37.479 66.2188 32.5271 52.2341 30.9816 37.6806C30.864 36.3786 31.0187 35.0664 31.436 33.8275C31.8533 32.5885 32.5239 31.4501 33.4053 30.4845C34.2867 29.519 35.3595 28.7476 36.5553 28.2193C37.7512 27.6911 39.0439 27.4177 40.3512 27.4165H54.4762C56.7612 27.394 58.9764 28.2031 60.7089 29.6931C62.4415 31.1831 63.5731 33.2522 63.8929 35.5148C64.4891 40.0351 65.5947 44.4735 67.1887 48.7452C67.8222 50.4304 67.9593 52.2619 67.5838 54.0227C67.2083 55.7835 66.3359 57.3997 65.07 58.6798L59.0904 64.6594C65.793 76.4469 75.5529 86.2068 87.3404 92.9094L93.32 86.9298C94.6001 85.6639 96.2163 84.7915 97.9771 84.416C99.7378 84.0405 101.569 84.1776 103.255 84.8111C107.526 86.4051 111.965 87.5107 116.485 88.1069C118.772 88.4295 120.861 89.5816 122.354 91.3438C123.847 93.1061 124.641 95.3557 124.583 97.6648Z"
+                        stroke="#FEF7FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="logo-name">Phone</p>
+                <p>+91 83028528XX</p>
+            </div>
+            <div class="email">
+
+                <svg width="50" height="50" viewBox="0 0 156 149" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="78" cy="74.5" rx="78" ry="74.5" fill="#AECDE4" />
+                    <path
+                        d="M119.875 89.25C119.875 91.7696 118.883 94.1859 117.117 95.9675C115.351 97.7491 112.956 98.75 110.458 98.75H53.9583L35.125 117.75V41.75C35.125 39.2304 36.1171 36.8141 37.8831 35.0325C39.649 33.2509 42.0442 32.25 44.5417 32.25H110.458C112.956 32.25 115.351 33.2509 117.117 35.0325C118.883 36.8141 119.875 39.2304 119.875 41.75V89.25Z"
+                        stroke="#FEF7FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="logo-name">Email</p>
+                <p>kumarayaman@gmail.com</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>© 2024 Kumar Ayaman | All Rights Reserved</p>
+    </footer>
+    <script>
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            const header = document.querySelector('header');
+            let currentSection = 'home';
+
+            navbar.classList.toggle('sticky', window.scrollY > header.clientHeight - 460);
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - navbar.clientHeight;
+                if (window.scrollY >= sectionTop - 240) {
+                    currentSection = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.toggle("active", link.getAttribute("href").includes(currentSection));
+            });
+        });
+    </script>
+</body>
+</html>
